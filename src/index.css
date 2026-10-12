@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #292a24;
+  background: #faf8f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  --paper: #faf8f3;
+  --soft: #f0ece3;
+  --ink: #292a24;
+  --olive: #9a7b4f;
+  --terracotta: #a4875c;
+  --muted: #85837b;
+  --line: #e2ddd3;
+  --sans: "Manrope", sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 4px;
+}
+p {
+  margin: 0;
+}
+::selection {
+  background: #e4dac7;
+  color: var(--ink);
+}
+#root {
+  min-height: 100vh;
+  overflow: hidden;
+}
