@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anastasiya145.github.io/avocat_site-web/sitemap.xml
