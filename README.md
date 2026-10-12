@@ -12,8 +12,7 @@ npm run dev
 Verifier la version de production avec `npm run build`.
 
 ## GitHub Pages
-  }
-}
-```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Le site est publie sur https://anastasiya145.github.io/avocat_site-web/.
+Chaque push sur `main` lance le workflow `.github/workflows/deploy.yml`.
+Dans les parametres du depot, choisir **Settings > Pages > Build and deployment > GitHub Actions** comme source.
