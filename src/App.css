@@ -442,7 +442,7 @@ blockquote em {
   min-height: 80px;
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) 14px;
+  grid-template-columns: 18px minmax(0, 1fr);
   align-items: start;
   gap: 12px;
   padding: 17px 0;
@@ -451,15 +451,63 @@ blockquote em {
   font: italic 15px var(--serif);
   color: var(--terracotta);
 }
-.expertise-item h3 {
+.expertise-summary-copy h3 {
   font: 400 23px var(--serif);
   color: var(--ink);
   margin: 0;
 }
-.expertise-item p {
+.expertise-summary-copy p {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.5;
+}
+.expertise-details {
+  min-width: 0;
+}
+.expertise-details summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+}
+.expertise-details summary::-webkit-details-marker {
+  display: none;
+}
+.expertise-mark {
+  position: relative;
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  color: var(--olive);
+}
+.expertise-mark::before,
+.expertise-mark::after {
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  width: 10px;
+  height: 1px;
+  background: currentcolor;
+  content: "";
+}
+.expertise-mark::after {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+}
+.expertise-details[open] .expertise-mark::after {
+  transform: rotate(90deg) scaleX(0);
+}
+.expertise-details ul {
+  display: grid;
+  gap: 7px;
+  padding-left: 16px;
+  margin: 16px 18px 2px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
 }
 .expertise-mark {
   color: var(--olive);
@@ -1004,11 +1052,11 @@ blockquote em {
     aspect-ratio: 0.9;
   }
   .expertise-item {
-    grid-template-columns: 22px minmax(0, 1fr) 14px;
+    grid-template-columns: 22px minmax(0, 1fr);
     gap: 10px;
     padding: 17px 0;
   }
-  .expertise-item h3 {
+  .expertise-summary-copy h3 {
     font-size: 20px;
   }
   .fees-grid,

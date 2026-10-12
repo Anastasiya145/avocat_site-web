@@ -1,6 +1,89 @@
 import { type FormEvent, useEffect, useState } from "react";
 import "./App.css";
 
+const practiceAreas = [
+  {
+    title: "Droit immobilier et de la construction",
+    summary: "Accompagnement autour des biens, des travaux et des baux.",
+    details: [
+      "Suivi des expertises et préparation des échanges avec les experts.",
+      "Analyse des garanties et accompagnement des litiges liés aux travaux ou aux vices d’un bien.",
+      "Négociation et rédaction de baux commerciaux, cession de bail ou de fonds de commerce.",
+      "Conseil en copropriété et traitement des contestations entre copropriétaires.",
+    ],
+  },
+  {
+    title: "Droit des affaires, concurrence et distribution",
+    summary:
+      "Conseil juridique pour structurer les activités et leurs relations commerciales.",
+    details: [
+      "Accompagnement des opérations sur les sociétés : création, cession de titres ou rapprochement d’entreprises.",
+      "Rédaction et négociation de contrats commerciaux et de conditions générales de vente.",
+      "Gestion des différends liés aux négociations, aux relations commerciales ou à la fin d’un contrat.",
+    ],
+  },
+  {
+    title: "Droit de l’entreprise",
+    summary:
+      "Solutions juridiques pour anticiper les difficultés et traiter les procédures collectives.",
+    details: [
+      "Étude des procédures de sauvegarde, de redressement ou de liquidation judiciaire.",
+      "Préparation de négociations avec les créanciers fiscaux, sociaux et commerciaux.",
+      "Conseil relatif aux garanties personnelles et aux engagements bancaires du dirigeant.",
+    ],
+  },
+  {
+    title: "Postulation et représentation en justice",
+    summary:
+      "Rédaction des actes et suivi des dossiers devant les juridictions compétentes.",
+    details: [
+      "Tribunal judiciaire et tribunal de commerce.",
+      "Conseil de prud’hommes.",
+      "Cour d’appel, dans le respect des règles de représentation applicables.",
+    ],
+  },
+  {
+    title: "Droit pénal et droit pénal des affaires",
+    summary:
+      "Assistance des dirigeants et entreprises confrontés à une procédure pénale.",
+    details: [
+      "Préparation de la défense et accompagnement aux différentes étapes de la procédure.",
+      "Dossiers financiers : abus de biens sociaux, abus de confiance, escroquerie ou faux.",
+      "Questions de banqueroute et interdiction de gérer.",
+    ],
+  },
+  {
+    title: "Droit de la propriété intellectuelle",
+    summary:
+      "Protection et valorisation des créations, marques et actifs immatériels.",
+    details: [
+      "Rédaction et négociation de licences ou de cessions de droits.",
+      "Conseil lors du dépôt de marques, dessins et modèles.",
+      "Gestion des différends en matière de contrefaçon et de brevets.",
+    ],
+  },
+  {
+    title: "Droit patrimonial des personnes",
+    summary:
+      "Conseil pour organiser les conséquences patrimoniales des étapes de la vie.",
+    details: [
+      "Divorce et détermination des conséquences financières de la séparation.",
+      "Liquidation du régime matrimonial et règlement des successions.",
+      "Transmission et organisation patrimoniale de l’entreprise.",
+    ],
+  },
+  {
+    title: "Réparation du préjudice corporel",
+    summary:
+      "Accompagnement des victimes dans l’évaluation et l’indemnisation de leurs préjudices.",
+    details: [
+      "Accidents de la route et accidents de la vie courante ou sportive.",
+      "Préjudices consécutifs à une erreur médicale.",
+      "Échanges avec les assureurs et suivi de la procédure d’indemnisation.",
+    ],
+  },
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [messageReady, setMessageReady] = useState(false);
@@ -87,7 +170,7 @@ function App() {
 
       <main>
         <section className="hero page-width" id="accueil">
-          <div className="hero-copy reveal reveal-left">
+          <div className="hero-copy">
             <p className="eyebrow">
               <span className="eyebrow-line" />
               Cabinet d'avocat · Rouen
@@ -106,7 +189,7 @@ function App() {
                 Parlons de votre situation{" "}
                 <span aria-hidden="true">&rarr;</span>
               </a>
-              <a className="text-link" href="#expertises">
+              <a className="text-link" href="#cabinet">
                 Découvrir le cabinet
               </a>
             </div>
@@ -191,37 +274,34 @@ function App() {
               <p className="eyebrow">
                 02 <span className="eyebrow-line" /> Domaines d'intervention
               </p>
-              <h2>Votre situation, le point de départ.</h2>
+              <h2>Nos domaines d’intervention</h2>
               <p>
-                Contenu éditorial provisoire. Les domaines seront précisés avec
-                l'avocate avant la mise en ligne.
+                Le cabinet vous accompagne dans ces matières, en conseil comme
+                en contentieux, selon les particularités de votre situation.
               </p>
             </div>
             <div className="expertise-list">
-              <article className="expertise-item reveal">
-                <span className="item-number">01</span>
-                <div>
-                  <h3>Domaines d’intervention à préciser</h3>
-                  <p>Matières et périmètre d’intervention à valider.</p>
-                </div>
-                <span className="expertise-mark" aria-hidden="true">−</span>
-              </article>
-              <article className="expertise-item reveal reveal-delay-1">
-                <span className="item-number">02</span>
-                <div>
-                  <h3>Situations accompagnées à préciser</h3>
-                  <p>Présentation des demandes accueillies à compléter.</p>
-                </div>
-                <span className="expertise-mark" aria-hidden="true">−</span>
-              </article>
-              <article className="expertise-item reveal reveal-delay-2">
-                <span className="item-number">03</span>
-                <div>
-                  <h3>Modalités d’intervention à préciser</h3>
-                  <p>Nature de l’accompagnement à confirmer.</p>
-                </div>
-                <span className="expertise-mark" aria-hidden="true">−</span>
-              </article>
+              {practiceAreas.map((area, index) => (
+                <article className="expertise-item reveal" key={area.title}>
+                  <span className="item-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <details className="expertise-details">
+                    <summary>
+                      <span className="expertise-summary-copy">
+                        <h3>{area.title}</h3>
+                        <p>{area.summary}</p>
+                      </span>
+                      <span className="expertise-mark" aria-hidden="true" />
+                    </summary>
+                    <ul>
+                      {area.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  </details>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -230,7 +310,9 @@ function App() {
           <div className="page-width">
             <div className="process-heading reveal">
               <div>
-                <p className="eyebrow">03 / Le premier rendez-vous</p>
+                <p className="eyebrow">
+                  03 <span className="eyebrow-line" /> Le premier rendez-vous
+                </p>
                 <h2>Avancer, étape par étape.</h2>
               </div>
               <p>
@@ -342,7 +424,7 @@ function App() {
             <div className="contact-copy reveal">
               <p className="eyebrow">
                 <span className="eyebrow-line" />
-                05 / Contact
+                05 <span className="eyebrow-line" /> Contact
               </p>
               <h2>Parlons de votre situation.</h2>
               <p>
