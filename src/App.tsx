@@ -207,9 +207,7 @@ function App() {
         <section className="intro-section section-pad" id="lavocate">
           <div className="page-width intro-grid">
             <div className="intro-title reveal">
-              <p className="eyebrow">
-                01 <span className="eyebrow-line" /> L'avocate
-              </p>
+              <p className="eyebrow">01 / L'avocate</p>
               <h2>Le droit commence par un échange.</h2>
             </div>
             <div className="intro-content reveal">
@@ -232,10 +230,6 @@ function App() {
                 Parcours &amp; expérience
               </p>
               <h2>Un parcours à partager.</h2>
-              <p>
-                Les informations ci-dessous sont provisoires et seront
-                complétées avec Laura Loizel avant publication.
-              </p>
             </div>
             <ol className="career-list">
               <li className="career-item reveal">
@@ -271,9 +265,7 @@ function App() {
         <section className="expertise-section section-pad" id="expertises">
           <div className="page-width expertise-grid">
             <div className="expertise-heading reveal">
-              <p className="eyebrow">
-                02 <span className="eyebrow-line" /> Domaines d'intervention
-              </p>
+              <p className="eyebrow">02 / Domaines d'intervention</p>
               <h2>Nos domaines d’intervention</h2>
               <p>
                 Le cabinet vous accompagne dans ces matières, en conseil comme
@@ -310,9 +302,7 @@ function App() {
           <div className="page-width">
             <div className="process-heading reveal">
               <div>
-                <p className="eyebrow">
-                  03 <span className="eyebrow-line" /> Le premier rendez-vous
-                </p>
+                <p className="eyebrow">03 / Le premier rendez-vous</p>
                 <h2>Avancer, étape par étape.</h2>
               </div>
               <p>
@@ -355,9 +345,7 @@ function App() {
           <div className="page-width">
             <div className="cabinet-heading reveal">
               <div>
-                <p className="eyebrow">
-                  04 <span className="eyebrow-line" /> Le cabinet
-                </p>
+                <p className="eyebrow">04 / Le cabinet</p>
                 <h2>Au cœur de Rouen.</h2>
               </div>
               <p>
@@ -396,10 +384,7 @@ function App() {
         <section className="fees-section section-pad" id="honoraires">
           <div className="page-width fees-grid">
             <div className="reveal">
-              <p className="eyebrow">
-                <span className="eyebrow-line" />
-                Une relation de confiance
-              </p>
+              <p className="eyebrow">05 / Honoraires</p>
               <h2>
                 Des honoraires
                 <br />
@@ -422,10 +407,7 @@ function App() {
         <section className="contact-section section-pad" id="contact">
           <div className="page-width contact-grid">
             <div className="contact-copy reveal">
-              <p className="eyebrow">
-                <span className="eyebrow-line" />
-                05 <span className="eyebrow-line" /> Contact
-              </p>
+              <p className="eyebrow">06 / Contact</p>
               <h2>Parlons de votre situation.</h2>
               <p>
                 Pour une demande de rendez-vous ou une première prise de

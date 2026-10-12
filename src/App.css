@@ -285,7 +285,7 @@ blockquote em {
   padding: 112px 0;
 }
 .intro-section {
-  background: var(--paper);
+  background: var(--soft);
   padding-block: 64px;
 }
 .intro-grid {
@@ -361,9 +361,10 @@ blockquote em {
   border-top: 1px solid var(--line);
 }
 .career-list {
-  padding-left: 22px;
-  border-top: 0;
-  border-left: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  border-left: 0;
 }
 .career-heading h2 {
   margin: 20px 0 22px;
@@ -382,15 +383,17 @@ blockquote em {
   margin: 0;
   list-style: none;
 }
-.career-list {
+/* .career-list {
   border-top: 1px solid var(--line);
-}
+} */
 .career-item {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 18px;
-  padding: 21px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-content: start;
+  gap: 12px;
+  padding: 0 16px;
+  border-left: 1px solid var(--line);
+  /* border-bottom: 1px solid var(--line); */
 }
 .career-number {
   padding-top: 2px;
@@ -414,7 +417,6 @@ blockquote em {
   line-height: 1.65;
 }
 .expertise-section {
-  background: var(--soft);
   padding-block: 64px;
 }
 .expertise-grid {
@@ -619,6 +621,7 @@ blockquote em {
 }
 .fees-section {
   background: var(--paper);
+  border-top: 1px solid var(--line);
 }
 .fees-grid {
   display: grid;
@@ -913,6 +916,15 @@ blockquote em {
   .career-grid {
     grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
     gap: 36px;
+  }
+  .career-list {
+    grid-template-columns: 1fr;
+  }
+  .career-item {
+    grid-template-columns: 32px minmax(0, 1fr);
+    padding: 17px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
   }
   .process-heading {
     gap: 36px;
